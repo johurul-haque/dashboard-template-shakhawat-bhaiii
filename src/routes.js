@@ -48,8 +48,14 @@ const Alerts = React.lazy(() => import('./views/notifications/alerts/Alerts'))
 const Badges = React.lazy(() => import('./views/notifications/badges/Badges'))
 const Modals = React.lazy(() => import('./views/notifications/modals/Modals'))
 const Toasts = React.lazy(() => import('./views/notifications/toasts/Toasts'))
-
 const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
+
+/* Management */
+/* Academic */
+const BranchManagement = React.lazy(() => import('./views/academic/branchManagement/BranchManagement'));
+const ShiftManagement = React.lazy(() => import('./views/academic/shiftManagement/ShisftManagement'));
+const VersionManagement = React.lazy(() => import('./views/academic/versionManagement/VersionManagement'));
+const SectionManagement = React.lazy(() => import('./views/academic/sectionManagement/SectionManagement'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -97,6 +103,15 @@ const routes = [
   { path: '/notifications/modals', name: 'Modals', element: Modals },
   { path: '/notifications/toasts', name: 'Toasts', element: Toasts },
   { path: '/widgets', name: 'Widgets', element: Widgets },
+
+
+  /* Management */
+  /* Academic */
+  { path: '/academic/branch', name: 'Branch', element: BranchManagement },
+  { path: '/academic/shift', name: 'Shift', element: ShiftManagement },
+  { path: '/academic/version', name: 'Version', element: VersionManagement },
+  { path: '/academic/section', name: 'Section', element: SectionManagement },
+
 ]
 
 export default routes

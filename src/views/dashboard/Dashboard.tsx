@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-
+import { faGraduationCap, faUsers, faChalkboardTeacher, faBook } from '@fortawesome/free-solid-svg-icons';
 import {
   CAvatar,
   CButton,
@@ -53,6 +53,7 @@ import avatar6 from 'src/assets/images/avatars/6.jpg'
 import WidgetsBrand from '../widgets/WidgetsBrand'
 import WidgetsDropdown from '../widgets/WidgetsDropdown'
 import MainChart from './MainChart'
+import StatsCard from './StatsCard'
 
 const Dashboard = () => {
   const progressExample = [
@@ -176,15 +177,42 @@ const Dashboard = () => {
     },
   ]
 
+
+  const stats = [
+    { count: 44, label: 'Student', icon: faGraduationCap, bgColor: '#FF8C42' },
+    { count: 10, label: 'Parents', icon: faUsers, bgColor: '#4CAF50' },
+    { count: 12, label: 'Teacher', icon: faChalkboardTeacher, bgColor: '#FF6384' },
+    { count: 35, label: 'Subject', icon: faBook, bgColor: '#9B51E0' }
+  ];
+
   return (
     <>
-      <WidgetsDropdown className="mb-4" />
+      {/* <WidgetsDropdown className="mb-4" /> */}
+
+      <div className="container mt-0 p-0">
+        <div className="row">
+          {stats.map((stat, index) => (
+            <div className="col-md-3 col-sm-6" key={index}>
+              <StatsCard
+                count={stat.count}
+                label={stat.label}
+                icon={stat.icon}
+                bgColor={stat.bgColor}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+
+
+
       <CCard className="mb-4">
         <CCardBody>
           <CRow>
             <CCol sm={5}>
               <h4 id="traffic" className="card-title mb-0">
-                Traffic
+                2024 Accounts Summary
               </h4>
               <div className="small text-body-secondary">January - July 2023</div>
             </CCol>
